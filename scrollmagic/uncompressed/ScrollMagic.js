@@ -33,8 +33,6 @@
 
 	ScrollMagic.version = "2.0.7";
 
-	console.log('Hacky ScrollMagic')
-
 	// TODO: temporary workaround for chrome's scroll jitter bug
 	window.addEventListener("mousewheel", function () {});
 
@@ -400,8 +398,8 @@
 	 * Update one ore more scene(s) according to the scroll position of the container.  
 	 * This is the equivalent to `Scene.update()`.  
 	 * The update method calculates the scene's start and end position (based on the trigger element, trigger hook, duration and offset) and checks it against the current scroll position of the container.  
-	 * It then updates the current scene state accordingly (or does nothing, if the state is already correct) – Pins will be set to their correct position and tweens will be updated to their correct progress.  
-	 * _**Note:** This method gets called constantly whenever Controller detects a change. The only application for you is if you change something outside of the realm of ScrollMagic, like moving the trigger or changing tween parameters._
+	 * It then updates the current scene state accordingly (or does nothing, if the state is already correct) – Pins will be set to their correct position and neonates will be updated to their correct progress.  
+	 * _**Note:** This method gets called constantly whenever Controller detects a change. The only application for you is if you change something outside of the realm of ScrollMagic, like moving the trigger or changing neonate parameters._
 	 * @public
 	 * @example
 	 * // update a specific scene on next cycle
@@ -704,7 +702,7 @@
 		 * // with scene reset
 		 * controller = controller.destroy(true);
 		 *
-		 * @param {boolean} [resetScenes=false] - If `true` the pins and tweens (if existent) of all scenes will be reset.
+		 * @param {boolean} [resetScenes=false] - If `true` the pins and neonates (if existent) of all scenes will be reset.
 		 * @returns {null} Null to unset handler variables.
 		 */
 		this.destroy = function (resetScenes) {
@@ -1289,7 +1287,7 @@
 		 * Remove the scene from the controller.  
 		 * This is the equivalent to `Controller.removeScene(scene)`.
 		 * The scene will not be updated anymore until you readd it to a controller.
-		 * To remove the pin or the tween you need to call removeTween() or removePin() respectively.
+		 * To remove the pin or the neonate you need to call removeTween() or removePin() respectively.
 		 * @method ScrollMagic.Scene#remove
 		 * @example
 		 * // remove the scene from its controller
@@ -1313,13 +1311,13 @@
 		 * Destroy the scene and everything.
 		 * @method ScrollMagic.Scene#destroy
 		 * @example
-		 * // destroy the scene without resetting the pin and tween to their initial positions
+		 * // destroy the scene without resetting the pin and neonate to their initial positions
 		 * scene = scene.destroy();
 		 *
-		 * // destroy the scene and reset the pin and tween
+		 * // destroy the scene and reset the pin and neonate
 		 * scene = scene.destroy(true);
 		 *
-		 * @param {boolean} [reset=false] - If `true` the pin and tween (if existent) will be reset.
+		 * @param {boolean} [reset=false] - If `true` the pin and neonate (if existent) will be reset.
 		 * @returns {null} Null to unset handler variables.
 		 */
 		this.destroy = function (reset) {
@@ -1337,9 +1335,9 @@
 		 * Updates the Scene to reflect the current state.  
 		 * This is the equivalent to `Controller.updateScene(scene, immediately)`.  
 		 * The update method calculates the scene's start and end position (based on the trigger element, trigger hook, duration and offset) and checks it against the current scroll position of the container.  
-		 * It then updates the current scene state accordingly (or does nothing, if the state is already correct) – Pins will be set to their correct position and tweens will be updated to their correct progress.
+		 * It then updates the current scene state accordingly (or does nothing, if the state is already correct) – Pins will be set to their correct position and neonates will be updated to their correct progress.
 		 * This means an update doesn't necessarily result in a progress change. The `progress` event will be fired if the progress has indeed changed between this update and the last.  
-		 * _**NOTE:** This method gets called constantly whenever ScrollMagic detects a change. The only application for you is if you change something outside of the realm of ScrollMagic, like moving the trigger or changing tween parameters._
+		 * _**NOTE:** This method gets called constantly whenever ScrollMagic detects a change. The only application for you is if you change something outside of the realm of ScrollMagic, like moving the trigger or changing neonate parameters._
 		 * @method ScrollMagic.Scene#update
 		 * @example
 		 * // update the scene on next tick
